@@ -2,11 +2,12 @@ v 4
 file . "4to1_mux_tb.vhdl" "916a248b9cd10b8f52b2b89d17dfa2146acc83c3" "20210421151256.338":
   entity mux_tb at 1( 0) + 0 on 41;
   architecture behav of mux_tb at 8( 111) + 0 on 42;
-file . "shift_reg_tb.vhdl" "51baa1de284b0289bdcfe49b35a088bd5af2e5f1" "20210420190355.676":
-  entity shift_reg_tb at 1( 0) + 0 on 13;
-file . "shift_reg.vhdl" "6aaad412781dd6d9cabc7fe19f8b7f9a269e89af" "20210420190344.895":
-  entity shift_reg at 1( 0) + 0 on 11;
-  architecture behav of shift_reg at 15( 593) + 0 on 12;
+file . "shift_reg_tb.vhdl" "51baa1de284b0289bdcfe49b35a088bd5af2e5f1" "20210421175950.543":
+  entity shift_reg_tb at 1( 0) + 0 on 53;
+  architecture behav of shift_reg_tb at 8( 116) + 0 on 54;
+file . "shift_reg.vhdl" "d5c174d755760ffc80e35486ec63a7ca2c57581c" "20210421175950.527":
+  entity shift_reg at 1( 0) + 0 on 51;
+  architecture behav of shift_reg at 15( 593) + 0 on 52;
 file . "4to1_mux.vhdl" "4d0cba4101502a0a9b40a0694303ee0747d5cddf" "20210421151256.322":
   entity mux at 1( 0) + 0 on 39;
   architecture behav of mux at 16( 426) + 0 on 40;

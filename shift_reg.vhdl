@@ -14,6 +14,13 @@ end shift_reg;
 
 architecture behav of shift_reg is
 begin
-O <= I;	-- WRONG! You must replace it with your implementation.
+
+process(I, I_SHIFT_IN, sel, clock, enable) is
+begin
+	if (enable='1') then
+		O <= I;
+	end if;
+end process;
+
 end behav;
 
