@@ -1,6 +1,23 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
+entity flip_flop is
+port(	D, clk: in std_logic;
+		Q: out std_logic);
+end flip_flop;
+
+architecture behavior of flip_flop is
+	begin
+	process(clk) is
+		begin
+			if (rising_edge(clk)) then 
+				Q <= D;
+			end if;
+		end process;
+end behavior;
+
+
+
 entity shift_reg is
 port(	I:	in std_logic_vector (3 downto 0); -- for loading
 		I_SHIFT_IN: in std_logic; -- shifted in bit for both left and right
