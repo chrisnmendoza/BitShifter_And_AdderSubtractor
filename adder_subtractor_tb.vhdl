@@ -34,15 +34,15 @@ oFlow, uFlow, s: std_logic;
 end record;
 --  The patterns to apply.
 type pattern_array is array (natural range <>) of pattern_type;
-constant patterns : pattern_array := 
+constant patterns : pattern_array := -- Order goes: Upper, Lower, Output, Overflow, Underflow, Select
 (("0001", "0001", "0010", '0', '0', '0'), --test 1 + 1 = 2
-("0111", "0111", "1110", '1', '0', '0'), --test overflow 7+7
+("0111", "0111", "1110", '1', '0', '0'), --test overflow 7 + 7
 ("1000", "1010", "0010", '0', '1', '0'), --test underflow -8 + (-6)
 ("0110", "1001", "1101", '1', '0', '1'), --test overflow 6 - (-3)
 ("0010", "0110", "1100", '0', '0', '1'), --test 2 - 6 = -4
 ("0100", "0001", "0101", '0', '0', '0'), --test 4 + 1 = 5
 ("1000", "0111", "0001", '0', '1', '1'), --test underflow -8 - 7
-("0001", "0001", "0000", '0', '0', '1')); -- Order goes: Upper, Lower, Output, Overflow, Underflow, Select
+("0001", "0001", "0000", '0', '0', '1')); --test 1 - 1 = 0
 begin
 --  Check each pattern.
 for n in patterns'range loop
