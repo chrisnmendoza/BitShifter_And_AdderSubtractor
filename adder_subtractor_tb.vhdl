@@ -49,9 +49,6 @@ for n in patterns'range loop
 --  Set the inputs.
 u <= patterns(n).u;
 l <= patterns(n).l;
-o <= patterns(n).o;
-oFlow <= patterns(n).oFlow;
-uFlow <= patterns(n).uFlow;
 s <= patterns(n).s;
 --  Wait for the results.
 wait for 1 ns;
