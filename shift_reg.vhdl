@@ -1,23 +1,6 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity flip_flop is
-port(	D, clk: in std_logic;
-		Q: out std_logic);
-end flip_flop;
-
-architecture behavior of flip_flop is
-	begin
-	process(clk) is
-		begin
-			if (rising_edge(clk)) then 
-				Q <= D;
-			end if;
-		end process;
-end behavior;
-
-
-
 entity shift_reg is
 port(	I:	in std_logic_vector (3 downto 0); -- for loading
 		I_SHIFT_IN: in std_logic; -- shifted in bit for both left and right
@@ -30,12 +13,51 @@ port(	I:	in std_logic_vector (3 downto 0); -- for loading
 end shift_reg;
 
 architecture behav of shift_reg is
+signal values : std_logic_vector (3 downto 0);	--saved values before it gets loaded into O
 begin
 
-process(I, I_SHIFT_IN, sel, clock, enable) is
+process(I, I_SHIFT_IN, sel, enable, clock) is
 begin
-	if (enable='1') then
-		O <= I;
+	if (clock='1' and enable='1') then
+		if (sel="00") then
+			-- do nothing
+			O(3) <= values(3);
+			O(2) <= values(2);
+			O(1) <= values(1);
+			O(0) <= values(0);
+		
+		elsif (sel ="01") then
+			values(3) <= values(2);
+			values(2) <= values(1);
+			values(1) <= values(0);
+			values(0) <= I_SHIFT_IN;
+			O(3) <= values(3);
+			O(2) <= values(2);
+			O(1) <= values(1);
+			O(0) <= values(0);
+
+		elsif (sel="10") then
+			O(3) <= I_SHIFT_IN;
+			O(2) <= values(3);
+			O(1) <= values(2);
+			O(0) <= values(1);
+			values(0) <= values(1);
+			values(1) <= values(2);
+			values(2) <= values(3);
+			values(3) <= I_SHIFT_IN;
+		
+		elsif (sel="11") then
+			O(3) <= I(3);
+			O(2) <= I(2);
+			O(1) <= I(1);
+			O(0) <= I(0);
+			values(0) <= I(0);
+			values(1) <= I(1);
+			values(2) <= I(2);
+			values(3) <= I(3);
+		end if;
+		
+		
 	end if;
 end process;
 
