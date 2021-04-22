@@ -17,7 +17,6 @@ port(	upperInput: in std_logic_vector (3 downto 0);
 );
 end component;
 --  Specifies which entity is bound with the component.
--- for shift_reg_0: shift_reg use entity work.shift_reg(rtl);
 signal u, l, o : std_logic_vector(3 downto 0);
 signal oFlow, uFlow, s : std_logic;
 begin
@@ -30,7 +29,6 @@ type pattern_type is record
 --  The inputs of the shift_reg.
 u, l, o: std_logic_vector (3 downto 0);
 oFlow, uFlow, s: std_logic;
---  The expected outputs of the shift_reg.
 end record;
 --  The patterns to apply.
 type pattern_array is array (natural range <>) of pattern_type;
