@@ -27,14 +27,14 @@ begin
 			O(0) <= values(0);
 		
 		elsif (sel ="01") then
+			O(3) <= values(2);
+			O(2) <= values(1);
+			O(1) <= values(0);
+			O(0) <= I_SHIFT_IN;
 			values(3) <= values(2);
 			values(2) <= values(1);
 			values(1) <= values(0);
 			values(0) <= I_SHIFT_IN;
-			O(3) <= values(3);
-			O(2) <= values(2);
-			O(1) <= values(1);
-			O(0) <= values(0);
 
 		elsif (sel="10") then
 			O(3) <= I_SHIFT_IN;
