@@ -1,25 +1,25 @@
 v 4
-file . "shift_reg_8bit_tb.vhdl" "09fe2ecefed929b470be596d4e07adce3e46e8c3" "20210425214208.659":
-  entity shift_reg_8bit_tb at 1( 0) + 0 on 489;
-  architecture behav of shift_reg_8bit_tb at 8( 133) + 0 on 490;
-file . "adder_subtractor_tb.vhdl" "437549ecb00b9dada2af9bab7a0c0cfbf6725e70" "20210423002430.231":
-  entity adder_subtractor_tb at 1( 0) + 0 on 395;
-  architecture behav of adder_subtractor_tb at 8( 137) + 0 on 396;
-file . "adder_subtractor.vhdl" "981ca6a7e13a9f4ebf276177c4f361159ce2943f" "20210423002430.213":
-  entity adder_subtractor at 1( 0) + 0 on 393;
-  architecture behav of adder_subtractor at 14( 543) + 0 on 394;
-file . "4to1_mux.vhdl" "4d0cba4101502a0a9b40a0694303ee0747d5cddf" "20210425203150.970":
-  entity mux at 1( 0) + 0 on 409;
-  architecture behav of mux at 16( 426) + 0 on 410;
-file . "shift_reg.vhdl" "208e2aeb3020c81949756232f72d88a70d50e737" "20210425212722.826":
-  entity shift_reg at 1( 0) + 0 on 463;
-  architecture behav of shift_reg at 15( 593) + 0 on 464;
-file . "shift_reg_tb.vhdl" "c667b4fcae80b5ce979f6ef2b278628e4924ca5b" "20210425212722.843":
-  entity shift_reg_tb at 1( 0) + 0 on 465;
-  architecture behav of shift_reg_tb at 8( 116) + 0 on 466;
+file . "shift_reg_8bit.vhdl" "c17b45e871b1f91e6b72ece60c494f4da398fc2e" "20210425233948.148":
+  entity shift_reg_8bit at 1( 0) + 0 on 719;
+  architecture behav of shift_reg_8bit at 16( 649) + 0 on 720;
 file . "4to1_mux_tb.vhdl" "916a248b9cd10b8f52b2b89d17dfa2146acc83c3" "20210425203151.001":
   entity mux_tb at 1( 0) + 0 on 411;
   architecture behav of mux_tb at 8( 111) + 0 on 412;
-file . "shift_reg_8bit.vhdl" "3f46a37f6eb3d37d7e725ad141187b9c9b3fc5a3" "20210425214808.653":
-  entity shift_reg_8bit at 1( 0) + 0 on 499;
-  architecture behav of shift_reg_8bit at 16( 634) + 0 on 500;
+file . "shift_reg_tb.vhdl" "1e58fdccd66c85bc66591c9c8b81e5011667c629" "20210425233901.074":
+  entity shift_reg_tb at 1( 0) + 0 on 713;
+  architecture behav of shift_reg_tb at 8( 116) + 0 on 714;
+file . "shift_reg.vhdl" "208e2aeb3020c81949756232f72d88a70d50e737" "20210425233901.054":
+  entity shift_reg at 1( 0) + 0 on 711;
+  architecture behav of shift_reg at 15( 593) + 0 on 712;
+file . "4to1_mux.vhdl" "4d0cba4101502a0a9b40a0694303ee0747d5cddf" "20210425203150.970":
+  entity mux at 1( 0) + 0 on 409;
+  architecture behav of mux at 16( 426) + 0 on 410;
+file . "adder_subtractor.vhdl" "981ca6a7e13a9f4ebf276177c4f361159ce2943f" "20210423002430.213":
+  entity adder_subtractor at 1( 0) + 0 on 393;
+  architecture behav of adder_subtractor at 14( 543) + 0 on 394;
+file . "adder_subtractor_tb.vhdl" "437549ecb00b9dada2af9bab7a0c0cfbf6725e70" "20210423002430.231":
+  entity adder_subtractor_tb at 1( 0) + 0 on 395;
+  architecture behav of adder_subtractor_tb at 8( 137) + 0 on 396;
+file . "shift_reg_8bit_tb.vhdl" "b8d5c5bf97db30add83fe05faf99a75b06d790db" "20210425233948.167":
+  entity shift_reg_8bit_tb at 1( 0) + 0 on 721;
+  architecture behav of shift_reg_8bit_tb at 8( 133) + 0 on 722;
