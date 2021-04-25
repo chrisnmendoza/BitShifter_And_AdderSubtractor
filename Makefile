@@ -10,6 +10,12 @@ shift_reg: shift_reg_tb.vhdl shift_reg.vhdl
 	ghdl -e shift_reg_tb
 	ghdl -r shift_reg_tb
 
+shift_reg_8bit: shift_reg_8bit_tb.vhdl shift_reg_8bit.vhdl
+	ghdl -a shift_reg_8bit.vhdl
+	ghdl -a shift_reg_8bit_tb.vhdl
+	ghdl -e shift_reg_8bit_tb
+	ghdl -r shift_reg_8bit_tb
+
 adder_subtractor: adder_subtractor_tb.vhdl adder_subtractor.vhdl
 	ghdl -a adder_subtractor.vhdl
 	ghdl -a adder_subtractor_tb.vhdl

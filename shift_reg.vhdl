@@ -26,7 +26,7 @@ begin
 			O(1) <= values(1);
 			O(0) <= values(0);
 		
-		elsif (sel ="01") then
+		elsif (sel ="01") then    --left shift
 			O(3) <= values(2);
 			O(2) <= values(1);
 			O(1) <= values(0);
@@ -36,7 +36,7 @@ begin
 			values(1) <= values(0);
 			values(0) <= I_SHIFT_IN;
 
-		elsif (sel="10") then
+		elsif (sel="10") then   --right shift
 			O(3) <= I_SHIFT_IN;
 			O(2) <= values(3);
 			O(1) <= values(2);

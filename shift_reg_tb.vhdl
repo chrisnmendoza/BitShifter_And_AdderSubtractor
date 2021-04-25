@@ -40,11 +40,8 @@ type pattern_array is array (natural range <>) of pattern_type;
 constant patterns : pattern_array := --WRONG test vectors. replace with your own.
 
 (("0100", '0', '1', '1', "11", "0100"),
-("0100", '0', '1', '1', "10", "0010"),
-("0100", '0', '0', '1', "00", "0010"),
-("0100", '0', '1', '1', "10", "0001"),
-("0100", '0', '1', '1', "01", "0010"),
-("0100", '0', '1', '1', "00", "0010")); -- Need two vectors to simulate an edge.
+("0100", '1', '1', '1', "10", "1010"),
+("0110", '1', '1', '1', "10", "1101")); -- Need two vectors to simulate an edge.
 begin
 --  Check each pattern.
 for n in patterns'range loop
