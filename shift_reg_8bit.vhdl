@@ -77,8 +77,6 @@ begin
 			--O_8bit <= I_8bit;
             values_8bit <= I_8bit;
 		end if;
-		
-		
 	end if;
 	clockSig <= clock_8bit;
 end process;
