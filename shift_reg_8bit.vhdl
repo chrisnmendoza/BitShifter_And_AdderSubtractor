@@ -34,7 +34,7 @@ begin
 shift_reg_0: shift_reg port map (I => I_8bit(7 downto 4), I_SHIFT_IN => inshift0, sel => sel_8bit, clock => clock_8bit, enable => enable_8bit, O => O_8bit(7 downto 4)); --left 4 bits
 shift_reg_1: shift_reg port map (I => I_8bit(3 downto 0), I_SHIFT_IN => inshift1, sel => sel_8bit, clock => clock_8bit, enable => enable_8bit, O => O_8bit(3 downto 0)); --right 4 bits
 
-process(I_8bit, I_SHIFT_IN_8bit, sel_8bit, enable_8bit, clock_8bit) is
+process(I_8bit, I_SHIFT_IN_8bit, sel_8bit, enable_8bit) is
 begin
 	if (clock_8bit='1' and enable_8bit='1') then
 		if (sel_8bit="00") then
