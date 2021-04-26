@@ -34,7 +34,7 @@ i_shift_in, clock, enable: std_logic;
 sel: std_logic_vector(1 downto 0);
 --  The expected outputs of the shift_reg.
 o: std_logic_vector (7 downto 0);
-end record;
+end record; 
 --  The patterns to apply.
 type pattern_array is array (natural range <>) of pattern_type;
 constant patterns : pattern_array := --WRONG test vectors. replace with your own.
@@ -45,13 +45,14 @@ constant patterns : pattern_array := --WRONG test vectors. replace with your own
 ("00000000", '0', '1', '1', "10", "00110000"),
 ("11111111", '0', '1', '1', "10", "00011000"),
 ("00000000", '0', '1', '1', "10", "00001100"),
-("00000000", '0', '1', '1', "00", "00001100"),
 ("11111111", '0', '1', '1', "10", "00000110"),
 ("00000000", '0', '1', '1', "10", "00000011"),
 ("11111111", '0', '1', '1', "10", "00000001"),
 ("00000000", '0', '1', '1', "10", "00000000"),
 ("11000001", '0', '1', '1', "11", "11000001"),
-("11000001", '1', '1', '1', "11", "11000001")); -- Need two vectors to simulate an edge.
+("11000001", '1', '1', '1', "11", "11000001"),
+("11000001", '0', '1', '1', "00", "11000001"),
+("11000001", '1', '1', '1', "01", "10000011")); -- Need two vectors to simulate an edge.
 begin
 --  Check each pattern.
 for n in patterns'range loop

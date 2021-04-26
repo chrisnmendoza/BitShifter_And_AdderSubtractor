@@ -28,11 +28,16 @@ end component;
 signal values_8bit : std_logic_vector (7 downto 0);	--saved values before it gets loaded into O
 signal inshift0: std_logic;
 signal inshift1: std_logic;
+signal iSig: std_logic_vector(7 downto 0);
+signal shiftSig: std_logic;
+signal selSig: std_logic_vector(1 downto 0);
+signal clockSig: std_logic;
+signal enableSig: std_logic;
 begin
 
 --  Component instantiation.
-shift_reg_0: shift_reg port map (I => I_8bit(7 downto 4), I_SHIFT_IN => inshift0, sel => sel_8bit, clock => clock_8bit, enable => enable_8bit, O => O_8bit(7 downto 4)); --left 4 bits
-shift_reg_1: shift_reg port map (I => I_8bit(3 downto 0), I_SHIFT_IN => inshift1, sel => sel_8bit, clock => clock_8bit, enable => enable_8bit, O => O_8bit(3 downto 0)); --right 4 bits
+shift_reg_0: shift_reg port map (I => iSig(7 downto 4), I_SHIFT_IN => inshift0, sel => selSig, clock => clockSig, enable => enableSig, O => O_8bit(7 downto 4)); --left 4 bits
+shift_reg_1: shift_reg port map (I => iSig(3 downto 0), I_SHIFT_IN => inshift1, sel => selSig, clock => clockSig, enable => enableSig, O => O_8bit(3 downto 0)); --right 4 bits
 
 process(I_8bit, I_SHIFT_IN_8bit, sel_8bit, enable_8bit) is
 begin
@@ -45,8 +50,8 @@ begin
 
 		elsif (sel_8bit ="01") then --left shift
             --write to a mux values(3) and send it in I_SHIFT_IN
+			inshift1 <= I_SHIFT_IN_8bit;
             inshift0 <= values_8bit(3);
-            inshift1 <= I_SHIFT_IN_8bit;
 			values_8bit(7) <= values_8bit(6);
 			values_8bit(6) <= values_8bit(5);
 			values_8bit(5) <= values_8bit(4);
@@ -79,6 +84,11 @@ begin
 		
 		
 	end if;
+	iSig <= I_8bit;
+	shiftSig <= I_SHIFT_IN_8bit;
+	selSig <= sel_8bit;
+	clockSig <= clock_8bit;
+	enableSig <= enable_8bit;
 end process;
 
 end behav;
