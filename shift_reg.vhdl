@@ -16,7 +16,7 @@ architecture behav of shift_reg is
 signal values : std_logic_vector (3 downto 0);	--saved values before it gets loaded into O
 begin
 
-process(I, I_SHIFT_IN, sel, enable) is
+process(clock) is
 begin
 	if (clock='1' and enable='1') then
 		if (sel="00") then
